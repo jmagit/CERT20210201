@@ -1,13 +1,31 @@
 package com.example.entidades;
 
-public class Persona {
-	Persona(int id) {
-		
+public interface Persona {
+
+	int getId();
+
+	void setId(int id);
+
+	String getNombre();
+
+	void setNombre(String nombre);
+
+	String getApellidos();
+
+	void setApellidos(String apellidos);
+
+	void jubilate();
+	
+	private String formatea(String value) {
+		return value.toUpperCase();
 	}
-	Persona() {
-		
+
+	default String getCompleto() {
+		return formatea(getNombre()) + " " + formatea(getApellidos());
 	}
-	public int getAlgo(String cache) {
+	
+	static int getEdad(Persona p) {
+		// p
 		return 0;
 	}
 }

@@ -4,13 +4,15 @@ import java.io.Serializable;
 
 import com.example.Grafico;
 
-public class Profesor extends Persona implements Grafico, Serializable {
+public class Profesor extends PersonaImp implements Grafico, Serializable {
 	private static final long serialVersionUID = 2L;
 	
 	private transient boolean cargado = false;
 	private transient String cache;
 	
-	Profesor(int id, String nombre) {
+	private Factura.Direccion direccion;
+	
+	public Profesor(int id, String nombre) {
 		super(id);
 		// ...
 	}
@@ -36,5 +38,16 @@ public class Profesor extends Persona implements Grafico, Serializable {
 		p.cargado = true;
 		return p;
 		
+	}
+	@Override
+	public void pintate() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public String getCompleto() {
+		// TODO Auto-generated method stub
+		return getApellidos() + ", " + getNombre();
 	}
 }

@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.entidades.Alumno;
+import com.example.entidades.Cobrador;
+import com.example.entidades.Factura;
 import com.example.entidades.Persona;
+import com.example.entidades.PersonaImp;
+import com.example.entidades.Profesor;
 import com.example.entidades.Servicio;
 
 /**
@@ -21,6 +25,26 @@ public class Principal {
 	 * @param args Argumentos de la linea de comandos
 	 */
 	public static void main(String[] args) {
+		var f = new Factura(1000);
+		f.addLinea(10);
+		f.addLinea(100);
+		var l = f.getLinea(0);
+		System.out.println(l.getNumFactura());
+		f.setNumFactura(666);
+		System.out.println(l.getNumFactura());
+		System.out.println(f.getLinea(1).getNumFactura());
+		
+		var d = new Factura.Direccion();
+		
+		f.dameGrafico().pintate();
+		
+		Persona persona = new Profesor(1, "Pepito");
+		persona = new Cobrador(0);
+		System.out.println(persona.getCompleto());
+		System.out.println(Persona.getEdad(persona));
+		
+	}
+	public static void main1() {
 		System.out.println(3 / 0);
 		System.out.println(3.0 / 0);
 		Object object = null;
@@ -66,6 +90,7 @@ public class Principal {
 		p.divide((int)corto, 2);
 		
 		p.algo(Servicio.dameProfesor(), "kkk");
+		
 	}
 
 	/**

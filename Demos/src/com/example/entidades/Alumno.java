@@ -1,8 +1,8 @@
 package com.example.entidades;
 
-public class Alumno extends Persona {
+public class Alumno extends PersonaImp {
 
-//	Alumno() {
-//		super(0);
-//	}
+	Alumno() {
+		super(0);
+	}
 }
