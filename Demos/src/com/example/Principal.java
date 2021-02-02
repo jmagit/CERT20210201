@@ -1,6 +1,15 @@
 package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.entidades.Alumno;
+import com.example.entidades.Persona;
+import com.example.entidades.Servicio;
+
 /**
  * Ejemplos del curso
+ * 
  * @author Javier
  *
  */
@@ -8,16 +17,61 @@ public class Principal {
 
 	/**
 	 * Método principal
+	 * 
 	 * @param args Argumentos de la linea de comandos
 	 */
 	public static void main(String[] args) {
 		System.out.println(3 / 0);
 		System.out.println(3.0 / 0);
+		Object object = null;
+		var i = new int[10][10][2];
+		var aux = i[1];
+		i[1] = i[0];
+		i[0] = aux;
+		i = null;
+		int a;
+		a = 1;
+		int b = a = 0;
+		var rslt = switch (a) {
+		case 1, 3, 5:
+			yield "impar";
+		case 2, 4, 6:
+			yield "par";
+		default :
+			yield "Desconocido";
+		};
+		etiqueta:
+		while (a > 0) {
+			switch (a) {
+			case 10: 
+				break etiqueta;
+			case 1:
+			case 3:
+				a += 1;
+			case 2, 4, 6:
+				a+=1;
+				break;
+			};
+		}
+		try {
+			
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		var p = new Principal();
+		short corto = 0;
+		p.divide((int)corto, 2);
+		
+		p.algo(Servicio.dameProfesor(), "kkk");
 	}
-	
+
 	/**
 	 * Divi ....
-	 * @param a Primer operando 
+	 * 
+	 * @param a Primer operando
 	 * @param b Segundo operando
 	 * @return Resultado de la division entera
 	 * @throws ArithmeticException Divide by zero
@@ -25,5 +79,20 @@ public class Principal {
 	public int divide(int a, int b) throws ArithmeticException {
 		return a / b;
 	}
+	public long divide(long a, long b) throws ArithmeticException {
+		return a / b;
+	}
+	public double divide(double a, double b) {
+		return a / b;
+	}
 
+	public void algo(Persona p) {
+		
+	}
+	public void algo(Alumno p) {
+		
+	}
+	public void algo(Grafico p, String ...nombres) {
+		
+	}
 }
