@@ -53,7 +53,6 @@ public abstract class PersonaImp implements Persona {
 	@Override
 	public void jubilate() {
 		jubilado = true;
-		fechaJubilacion = new Date();
-		
+		fechaJubilacion = new Date();		
 	}
 }

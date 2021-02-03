@@ -56,6 +56,13 @@ public class Factura {
 	
 	public Grafico dameGrafico() {
 		var msg = "Factura";
+		class Dir {
+			public String getFacturas() {
+				return msg;
+			}
+		}
+
+		System.out.println(Dir.class.getName());
 		var g = new Grafico() {
 			
 			@Override

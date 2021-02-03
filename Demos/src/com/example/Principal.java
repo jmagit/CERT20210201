@@ -33,6 +33,8 @@ public class Principal {
 		f.setNumFactura(666);
 		System.out.println(l.getNumFactura());
 		System.out.println(f.getLinea(1).getNumFactura());
+		System.out.println("Local: " + f.dameGrafico().getClass().getName());
+		System.out.println("Local: " + f.dameGrafico().getClass().getName());
 		
 		var d = new Factura.Direccion();
 		
@@ -40,8 +42,9 @@ public class Principal {
 		
 		Persona persona = new Profesor(1, "Pepito");
 		persona = new Cobrador(0);
-		System.out.println(persona.getCompleto());
+//		System.out.println(persona.getCompleto());
 		System.out.println(Persona.getEdad(persona));
+		
 		
 	}
 	public static void main1() {
