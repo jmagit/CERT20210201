@@ -1,5 +1,6 @@
 package com.example;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +24,13 @@ public class Principal {
 	 * Método principal
 	 * 
 	 * @param args Argumentos de la linea de comandos
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		var f = new Factura(1000);
 		f.addLinea(10);
 		f.addLinea(100);
@@ -35,17 +41,29 @@ public class Principal {
 		System.out.println(f.getLinea(1).getNumFactura());
 		System.out.println("Local: " + f.dameGrafico().getClass().getName());
 		System.out.println("Local: " + f.dameGrafico().getClass().getName());
+		var g = f.dameGrafico();
+		String cad ="com.example.Delegados";
+		// ...
+//		var clase = Class.forName(cad); // g.getClass();
+//		Object principal = clase.newInstance();
+//		var metodos = clase.getMethods();
+//		var metodo = clase.getMethod("otro");
+//		metodos[0].invoke(g);
+//		metodo.invoke(g);
+//		
+//		var d = new Factura.Direccion();
+//		
+//		f.dameGrafico().pintate();
+//		
+//		Persona persona = new Profesor(1, "Pepito");
+//		persona = new Cobrador(0);
+////		System.out.println(persona.getCompleto());
+//		System.out.println(Persona.getEdad(persona));
 		
-		var d = new Factura.Direccion();
-		
-		f.dameGrafico().pintate();
-		
-		Persona persona = new Profesor(1, "Pepito");
-		persona = new Cobrador(0);
-//		System.out.println(persona.getCompleto());
-		System.out.println(Persona.getEdad(persona));
-		
-		
+//		var autor = Delegados.class.getAnnotation(Autor.class);
+//		System.out.println(autor.nombre() + " " + autor.fecha());
+//		autor = Factura.class.getAnnotation(Autor.class);
+//		System.out.println(autor.nombre() + " " + autor.fecha());
 	}
 	public static void main1() {
 		System.out.println(3 / 0);

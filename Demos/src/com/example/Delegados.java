@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
+@Autor(nombre = "Yo mismo")
 public class Delegados {
 	static class BinariaAsc implements Comparator<String> {
 		public static int comparar(String o1, String o2) {
@@ -17,12 +18,15 @@ public class Delegados {
 		}
 	}
 
+	public Delegados() {
+	}
 	@FunctionalInterface
 	interface Operacion {
 		double calcula(double a, double b);
 	}
 
-	public int ordenDes(String uno, String dos) {
+	@Autor(nombre = "Yo mismo")
+	public int ordenDes(String uno, @Autor(nombre = "Yo mismo") String dos) {
 		return -uno.compareTo(dos);
 	}
 

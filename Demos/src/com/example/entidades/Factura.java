@@ -3,8 +3,10 @@ package com.example.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.Autor;
 import com.example.Grafico;
 
+@Autor(nombre = "Tu mismo", fecha = "Ayer")
 public class Factura {
 	private static int cont = 1;
 	
@@ -54,6 +56,7 @@ public class Factura {
 		this.numFactura = numFactura;
 	}
 	
+	@Deprecated
 	public Grafico dameGrafico() {
 		var msg = "Factura";
 		class Dir {
@@ -69,6 +72,10 @@ public class Factura {
 			public void pintate() {
 				System.out.println(msg + " " + numFactura);
 			}
+			public void otro() {
+				System.out.println(msg + " " + numFactura);
+			}
+
 		};
 		var p = new PersonaImp(1) {
 			

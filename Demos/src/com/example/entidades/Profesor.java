@@ -8,6 +8,7 @@ public class Profesor extends PersonaImp implements Grafico, Serializable {
 	private static final long serialVersionUID = 2L;
 	
 	private transient boolean cargado = false;
+	@SuppressWarnings({"unused", "kk"})
 	private transient String cache;
 	
 	private Factura.Direccion direccion;
