@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
@@ -82,15 +83,21 @@ public class Delegados {
 				return -o1.toLowerCase().compareTo(o2.toLowerCase());
 			}
 		});
-		find(lista, s -> s.startsWith("J"));
+		Optional<String> res = find(lista, s -> s.startsWith("J"));
+		if(res.isPresent() ) {
+			var s = res.get();
+		}
+		
+		// ...
+		
 	}
 
-	public String find(List<String> lista, Predicate<String> where) {
+	public Optional<String> find(List<String> lista, Predicate<String> where) {
 		for (String item : lista) {
 			if(where.test(item))
-				return item;
+				return Optional.of(item);
 		}
-		return null;
+		return Optional.empty();
 	}
 	
 	public List<String> ordenar(List<String> lista, Comparator<String> comparador) {
