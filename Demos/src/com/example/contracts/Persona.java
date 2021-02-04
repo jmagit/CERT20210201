@@ -1,4 +1,4 @@
-package com.example.entidades;
+package com.example.contracts;
 
 public interface Persona {
 

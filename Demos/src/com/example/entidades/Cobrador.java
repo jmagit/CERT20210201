@@ -1,5 +1,7 @@
 package com.example.entidades;
 
+import com.example.contracts.Persona;
+
 public class Cobrador extends Factura implements Persona {
 
 	public Cobrador(int numFactura) {

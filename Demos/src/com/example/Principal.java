@@ -4,10 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.contracts.Persona;
 import com.example.entidades.Alumno;
 import com.example.entidades.Cobrador;
 import com.example.entidades.Factura;
-import com.example.entidades.Persona;
 import com.example.entidades.PersonaImp;
 import com.example.entidades.Profesor;
 import com.example.entidades.Servicio;
