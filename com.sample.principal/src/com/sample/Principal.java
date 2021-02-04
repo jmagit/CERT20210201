@@ -12,7 +12,6 @@ public class Principal {
 //		FacturaService srv = new FacturaService();
 //		
 //		srv.add(new Factura());
-
 		ServiceLoader<FacturaRepository> services = ServiceLoader.load(FacturaRepository.class);
 		services.forEach(s -> s.add(null));
 
