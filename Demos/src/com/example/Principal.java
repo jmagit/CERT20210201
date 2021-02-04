@@ -19,6 +19,10 @@ import com.example.entidades.Servicio;
  *
  */
 public class Principal {
+	static {
+//		cont = getExtern();
+	}
+
 
 	/**
 	 * Método principal
@@ -31,6 +35,7 @@ public class Principal {
 	 * @throws IllegalAccessException 
 	 */
 	public static void main(String[] args) throws Exception {
+		afirma(1, new Profesor(1, null));
 		var f = new Factura(1000);
 		f.addLinea(10);
 		f.addLinea(100);
@@ -46,10 +51,17 @@ public class Principal {
 		// ...
 //		var clase = Class.forName(cad); // g.getClass();
 //		Object principal = clase.newInstance();
-//		var metodos = clase.getMethods();
-//		var metodo = clase.getMethod("otro");
-//		metodos[0].invoke(g);
-//		metodo.invoke(g);
+		var clase = g.getClass();
+		var metodos = clase.getMethods();
+		var metodo = clase.getMethod("otro");
+		metodos[0].setAccessible(true);
+		metodos[0].invoke(g);
+		metodo.setAccessible(true);
+		metodo.invoke(g);
+		PersonaImp.metodoDeClase();
+		Profesor.metodoDeClase();
+		Profesor.sobreescrituraDeMetodosDeClase();
+		
 //		
 //		var d = new Factura.Direccion();
 //		
@@ -64,6 +76,30 @@ public class Principal {
 //		System.out.println(autor.nombre() + " " + autor.fecha());
 //		autor = Factura.class.getAnnotation(Autor.class);
 //		System.out.println(autor.nombre() + " " + autor.fecha());
+	}
+	static Persona[] lstList = new Persona[10];
+	public static void afirma(int index, Persona item) {
+		if(item == null)
+			throw new IllegalArgumentException("Item");
+		assert 0 <= index && index < lstList.length : "Indice";
+		assert item != null : "item";
+		lstList[index] = item;
+		assert index == item.getId() : "Result";
+		
+	}
+	public static void reflexion() throws Exception {
+		String cad ="com.example.Delegados";
+		// ...
+		Class<?> clase;
+		try {
+			clase = Class.forName(cad);
+			var metodos = clase.getMethods();
+			var metodo = clase.getMethod("otro");
+		} catch (ClassNotFoundException|NoSuchMethodException|SecurityException e) {
+			cad = "";
+			throw e; // new CursoException("En la refexion", e);
+		};
+
 	}
 	public static void main1() {
 		System.out.println(3 / 0);

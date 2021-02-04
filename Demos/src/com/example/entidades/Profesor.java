@@ -6,7 +6,12 @@ import com.example.Grafico;
 
 public class Profesor extends PersonaImp implements Grafico, Serializable {
 	private static final long serialVersionUID = 2L;
-	
+
+	//@Override
+	public static void sobreescrituraDeMetodosDeClase() {
+		System.out.println("Soy el de Profesor");
+	}
+
 	private transient boolean cargado = false;
 	@SuppressWarnings({"unused", "kk"})
 	private transient String cache;
@@ -15,6 +20,7 @@ public class Profesor extends PersonaImp implements Grafico, Serializable {
 	
 	public Profesor(int id, String nombre) {
 		super(id);
+		setId(id);
 		// ...
 	}
 	Profesor(int id) {

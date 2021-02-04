@@ -9,8 +9,15 @@ public abstract class PersonaImp implements Persona {
 	private boolean jubilado = false;
 	private Date fechaJubilacion;
 	
+	public static void metodoDeClase() {
+		sobreescrituraDeMetodosDeClase();
+	}
+	public /*final*/ static void sobreescrituraDeMetodosDeClase() {
+		System.out.println("Soy el de PersonaImp");
+	}
+	
 	PersonaImp(int id) {
-		
+		setId(id);
 	}
 	
 //	PersonaImp() {

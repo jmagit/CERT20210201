@@ -9,7 +9,6 @@ import com.example.Grafico;
 @Autor(nombre = "Tu mismo", fecha = "Ayer")
 public class Factura {
 	private static int cont = 1;
-	
 	private int numFactura = 0;
 	List<Linea> lineas = new ArrayList<>();
 	
@@ -73,7 +72,7 @@ public class Factura {
 				System.out.println(msg + " " + numFactura);
 			}
 			public void otro() {
-				System.out.println(msg + " " + numFactura);
+				System.out.println(msg + " INACCESIBLE " + numFactura);
 			}
 
 		};
