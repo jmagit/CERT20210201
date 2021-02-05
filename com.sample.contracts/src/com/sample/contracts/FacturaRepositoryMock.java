@@ -3,6 +3,9 @@ package com.sample.contracts;
 import com.sample.domains.entities.Factura;
 
 public class FacturaRepositoryMock implements FacturaRepository {
+	public void test() {
+		System.out.println("Soy un doble de prueba");
+	}
 
 	@Override
 	public Factura getById(int id) {

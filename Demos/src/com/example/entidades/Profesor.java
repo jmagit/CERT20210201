@@ -3,6 +3,7 @@ package com.example.entidades;
 import java.io.Serializable;
 
 import com.example.Grafico;
+import com.example.entidades.Factura.Direccion;
 
 public class Profesor extends PersonaImp implements Grafico, Serializable {
 	private static final long serialVersionUID = 2L;
@@ -57,4 +58,13 @@ public class Profesor extends PersonaImp implements Grafico, Serializable {
 		// TODO Auto-generated method stub
 		return getApellidos() + ", " + getNombre();
 	}
+	
+	@Override
+	public Object clone() {
+		var clon = new Profesor();
+		clon.cargado = this.cargado;
+		clon.direccion = (Direccion) this.direccion.clone();
+		return clon;
+	}
+	
 }

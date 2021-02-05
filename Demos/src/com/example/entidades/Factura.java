@@ -18,6 +18,13 @@ public class Factura {
 		public int getFacturas() {
 			return cont;
 		}
+		@Override
+		public Object clone() {
+			var clon = new Direccion();
+			// ...
+			return clon;
+		}
+
 	}
 	
 	public class Linea {
